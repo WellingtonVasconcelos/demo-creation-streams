@@ -21,6 +21,10 @@ public class Program {
 		// Criando uma STREAM usando a função de iteração
 		Stream<Integer> st3 = Stream.iterate(0, x -> x + 2);
 		System.out.println(Arrays.toString(st3.limit(10).toArray()));
+		
+		// Criando uma Stream - sequencia de Fibonacci
+		Stream<Long> st4 = Stream.iterate(new Long[] {0L, 1L}, p -> new Long [] {p[1], p[0]+p[1]}).map(p -> p[0]);
+		System.out.println(Arrays.toString(st4.limit(20).toArray()));
 	}
 
 }
